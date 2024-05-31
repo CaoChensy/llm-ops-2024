@@ -1,0 +1,44 @@
+虚拟化架构
+
+整体架构
+
+EMSPlus（Reporting）基于标准、开放、创新式架构，旨在提升性能，降低成本，虚拟化整体架构如图1所示。
+
+图1 虚拟化架构
+
+虚拟化架构实现了软硬件解耦，EMSPlus（Reporting）的各节点（MAN(Manager Node, 管理节点)/DCU(Data Collection Unit, 数据采集单元)/DPU(Data Processing Unit, 数据处理单元)）作为VNF(Virtualized Network Function, 虚拟化网络功能)直接部署在虚机上。
+
+基于目前中兴通讯虚拟化解决方案，各节点的虚机规格模型是通过NFVO(Network Functions Virtualization Orchestrator, 网络功能虚拟化编排器)下发到TECS(Tulip Elastic Cloud System, 郁金香弹性云系统)，从而由TECS分配虚机资源，创建虚机，然后在虚机上运行EMSPlus（Reporting）节点的多个内部组件，节点的生命周期由VNFM(Virtualized Network Function Manager, 虚拟化网络功能管理器)管理。
+
+VNF
+
+VNF实现了传统网络架构中物理网元功能的虚拟化。VNF含有多个内部组件，一个VNF可以部署在多个虚机上，每个虚机可以安装该VNF的一个内部组件。
+
+VNFM
+
+VNFM(Virtualized Network Function Manager, 虚拟化网络功能管理器)功能包括VNF生命周期管理、VNFM部署、配置管理、故障管理、安全管理、性能管理、日志管理、系统管理等，客户端和服务器支持加密SSL(Secure Sockets Layer, 安全套接字层)消息进行通讯。
+
+NFVO
+
+NFVO(Network Functions Virtualization Orchestrator, 网络功能虚拟化编排器)功能包括VNFM管理、VNF生命周期管理、网络服务编排、VIM(Virtualized Infrastructure Manager, 虚拟化基础设施管理系统)管理、目录管理、配置管理、故障管理、安全管理、性能管理、日志管理、系统管理、拓扑管理等功能，客户端和服务器支持加密SSL消息进行通讯。
+
+EMS
+
+EMSPlus（Reporting）可以对接传统EMS(Element Management System, 网元管理系统)，并完全继承传统O&M功能（例如配置管理、信令跟踪、性能管理、故障管理等）。EMS与VNF之间的接口与原有的到网元的接口相同，因此EMS可以同时管理物理和虚拟化网元，以帮助运营商节约成本、简化网络架构。
+
+与传统方式相比，EMS和VNFM直接有接口，EMS可以通过该接口获得虚机和硬件的状态信息。
+
+VIM和Hypervisor
+
+EMSPlus（Reporting）解决方案支持以下类型的VIM和Hypervisor：
+
+  * 自研虚拟化平台TECS，支持XEN、KVM(Kernel-based Virtual Machine, 基于内核的虚拟机)等类型Hypervisor。
+
+  * 第三方VIM，例如基于VMware或Openstack的CMS，支持EXSi、KVM等类型Hypervisor。
+
+
+
+
+VIM管理和检测整个虚拟化基础设施，包括增加硬件资源、虚拟化网络资源、虚机资源和故障管理等。VIM提供了虚拟化资源部署API(Application Program Interface, 应用程序接口)，可与其它VIM集成。
+
+TECS采用将物理资源虚拟化的技术，实现对物理资源和虚拟资源的统一管理，使得各网元能够从TECS中申请虚拟资源，达到资源的灵活划分和调整。各虚拟机运行各自独立的操作系统做到相互隔离，能够解决各网元版本兼容耦合的问题。

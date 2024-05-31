@@ -1,5 +1,16 @@
 # AI-ops-2024
 
+> 2024/05/31
+
+* 增加了notebook
+  * `01-save-text-to_elasticsearch.ipynb`: 将数据保存至ES数据库
+  * `02-qa.ipynb`: 一个简单的5G运维问答测试
+* 需要安装[zlai-0.3.76](https://github.com/zlai-llm/zlai/releases/tag/0.3.76)
+```bash
+!pip install zlai -U
+```
+* ElasticSearch 版本为 8.12.0
+
 > Embedding Model
 
 1. [bge-m3](https://hf-mirror.com/BAAI/bge-m3)

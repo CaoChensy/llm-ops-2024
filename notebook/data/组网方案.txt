@@ -1,0 +1,34 @@
+组网方案
+
+虚拟化实际组网平面如图1所示。
+
+图1 网络架构图
+
+EMSPlus（Reporting）的网络平面规划参见表1。
+
+表1 网络平面规划节点类型| 节点说明| 平面类型| 平面名称| 说明  
+---|---|---|---|---  
+MDS| 消息分发服务，MDS(Message Dispatch Service, 消息分发服务)按照配置的不同分发策略，将数据源上报的数据分发到指定的数据清洗服务器| EMSPlus_VNF_EMSPlus_NET| ZTE_EMSPlus_<局号>_VNF_EMSPlus_NET| 默认对接各个网元的平面，其它网元通过VRF(Virtual Route Forwarding, 虚拟路由转发)（EMSPlus）与本平面三层互通，目前该平面暂时不使用。  
+EMSPlus_VNF_GI_NET| ZTE_EMSPlus_<局号>_VNF_GI_NET| 对接xGW(Extendable Gateway, 综合接入网关)网元日志的，使用GI VRF转发。  
+EMSPlus_VNF_FWNAT_NET| ZTE_EMSPlus_<局号>_VNF_FWNAT_NET| 对接FireWall/CGNAT日志的，使用FWNAT_ROUTER VRF转发。  
+EMSPlus_VNF_BOSS_NET| ZTE_EMSPlus_<局号>_VNF_BOSS_NET| 对接PCRF(Policy and Charging Rules Function, 策略和计费规则功能)日志的，使用BOSS VRF转发。  
+EMSPlus_MEDIA_NET| ZTE_EMSPlus_<局号>_MEDIA_INT_NET| MDS向DCU转发数据。  
+EMSPlus_CTRL_NET| ZTE_EMSPlus_<局号>_CTRL_INT_NET| 接受MAN主控模块的管理控制以及配置消息。  
+DCU| 数据采集单元，实现对数据的接收、清洗、聚集、推送等| EMSPlus_MEDIA_NET| ZTE_EMSPlus_<局号>_MEDIA_INT_NET| 接收由MDS转发来的CHR(Call History Record, 呼叫历史记录)数据。  
+EMSPlus_CTRL_NET| ZTE_EMSPlus_<局号>_CTRL_INT_NET| 接受MAN主控模块的管理控制以及配置消息。  
+EMSPlus_VNF_North_NET| ZTE_EMSPlus_<局号>_VNF_North_NET| 北向平面。  
+ASC| SMF/UPF数据关联| EMSPlus_MEDIA_INT_NET| ZTE_EMSPlus_<局号>_MEDIA_INT_NET| 接收由MDS转发来的CHR数据。  
+EMSPlus_CTRL_INT_NET| ZTE_EMSPlus_<局号>_CTRL_INT_NET| 接受MAN主控模块的管理控制以及配置消息。  
+MAN| EMSPlus（Reporting）的主控模块| EMSPlus_MEDIA_NET| ZTE_EMSPlus_<局号>_MEDIA_INT_NET| 与DCU(Data Collection Unit, 数据采集单元)和DPU(Data Processing Unit, 数据处理单元)交互，完成数据的二次聚集、入库。  
+EMSPlus_CTRL_NET| ZTE_EMSPlus_<局号>_CTRL_INT_NET| MAN管理EMSPlus（Reporting）系统的各个模块。  
+VNF_link| ZTE_VNFM_<局号>_VNF_NET| 与VNFM(Virtualized Network Function Manager, 虚拟化网络功能管理器)交互，完成EMSPlus（Reporting）虚拟化相关的生命周期管理。  
+EMSPlus_OMM_NET| 运营商规划| OMM(Operation & Maintenance Module, 操作维护模块)网管大网，用于EMSPlus（Reporting）客户端登录。所有网元共用，与EMS(Element Management System, 网元管理系统)使用相同的网络平面。  
+EMSPlus_HeartBeat1| ZTE_EMSPlus_<局号>_HEARTBEAT_1_NET| 双机心跳主用。  
+EMSPlus_HeartBeat2| ZTE_EMSPlus_<局号>_HEARTBEAT_2_NET| 双机心跳备用。  
+DPU| 数据库数据节点| EMSPlus_MEDIA_NET| ZTE_EMSPlus_<局号>_MEDIA_INT_NET| 数据入库和查询。  
+EMSPlus_CTRL_NET| ZTE_EMSPlus_<局号>_CTRL_INT_NET| 接受MAN主控模块的管理控制以及配置消息。  
+FTU| 文件转换单元，将文件接口的日志转换为消息接口的消息发送给MDS| EMSPlus_MEDIA_NET| ZTE_EMSPlus_<局号>_MEDIA_NET| 内部数据传输使用。  
+EMSPlus_CTRL_NET| ZTE_EMSPlus_<局号>_CTRL_NET| 接受MAN主控模块的管理控制以及配置消息。  
+EMSPlus_HeartBeat1| ZTE_EMSPlus_<局号>_HEART1_NET| 双机心跳主用。  
+EMSPlus_HeartBeat2| ZTE_EMSPlus_<局号>_HEART2_NET| 双机心跳备用。  
+EMSPlus_VNF_FTU_NET| ZTE_EMSPlus_<局号>_VNF_FTU_NET| EMSPlus对接文件接口的网元，获取日志数据。

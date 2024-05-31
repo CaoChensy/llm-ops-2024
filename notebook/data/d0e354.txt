@@ -1,0 +1,47 @@
+硬件结构
+
+概述
+
+EMSPlus（Reporting）目前支持虚机/容器部署运行在NFVI云平台上，硬件支持COTS架构通用服务器，可稳定运行在ZTE E9000、ZTE R5300、HP C7000等多种硬件服务器上。
+
+HP C7000企业级服务器平台
+
+图1 HP C7000企业级服务器
+
+HP C7000是企业级的服务器，一般部署在数据中心。
+
+  * 10 U机框最大支持8块全高刀片或16块半高刀片：
+
+    * 半高刀片服务器规格为2个Intel Xeon 8~12核处理器，最大512 GB内存。
+
+    * 全高刀片服务器规格为4个Intel Xeon 8~12核处理器，最大1 TB内存。
+
+  * 每个刀片服务器提供1个100 M网络端口和2个GE(Gigabit Ethernet, 千兆以太网)口，通过使用PCIE(Peripheral Component Interconnect Express, 快速外设组件互连)子卡可扩展为6个GE口。
+
+  * 本地支持SAS(Serial Attached SCSI, 串行小型计算机系统接口)或SATA(Serial ATA, 串行ATA)硬盘，可连接外部存储。
+
+  * 机框内部交换由背板实现。后插卡出外部连接网口，支持三对HP虚拟连接（Virtual Connect，VC）模块或HP Cisco H3C刀片交换机。
+
+  * VC模块支持16个10GE内部接口和8个10GE外部接口，增强支持虚拟化管理。
+
+
+
+
+ZTE E9000企业级服务器平台
+
+图2 ZTE E9000企业级服务器
+
+与ATCA(Advanced Telecommunications Computing Architecture, 先进的电信计算架构)刀片相比，E9000服务器具备更高的计算密度，以及更高的能耗。
+
+  * 10 U机框最大支持8块全高刀片或16块半高刀片：
+
+    * 半高刀片服务器采用2个Intel Xeon核处理器、16×8 GB内存，支持满负荷工作。
+
+    * 全高刀片服务器采用4个Intel Xeon核处理器。
+
+  * 本地支持2个热插拔硬盘和2个GE口，可通过PCIE槽位扩展4个10GE口，或2个10GE口和2个FC(Fiber Channel, 光纤通道)口。
+
+  * 背板通过三对交换模块提供后插交换，每个交换模块具备16个10GE口用于框内交换，8个10GE口用于框间交换。
+
+
+

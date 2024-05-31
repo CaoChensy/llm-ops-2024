@@ -1,0 +1,177 @@
+缩略语
+
+API
+
+Application Program Interface应用程序接口
+
+APN
+
+Access Point Name接入点名称
+
+ATCA
+
+Advanced Telecommunications Computing Architecture先进的电信计算架构
+
+CHR
+
+Call History Record呼叫历史记录
+
+DC
+
+Direct Current直流电
+
+DCU
+
+Data Collection Unit数据采集单元
+
+DPI
+
+Deep Packet Inspection深度包检测
+
+DPU
+
+Data Processing Unit数据处理单元
+
+EMS
+
+Element Management System网元管理系统
+
+FC
+
+Fiber Channel光纤通道
+
+FTP
+
+File Transfer Protocol文件传输协议
+
+GE
+
+Gigabit Ethernet千兆以太网
+
+IMSI
+
+International Mobile Subscriber Identity国际移动用户标识
+
+IP
+
+Internet Protocol因特网协议
+
+KPI
+
+Key Performance Index关键性能指标
+
+KVM
+
+Kernel-based Virtual Machine基于内核的虚拟机
+
+MAN
+
+Manager Node管理节点
+
+MDS
+
+Message Dispatch Service消息分发服务
+
+MSISDN
+
+Mobile Station International Subscriber Directory Number移动台国际用户目录号
+
+MTBF
+
+Mean Time Between Failures平均故障间隔时间
+
+MTTR
+
+Mean Time To Repair平均故障维修时间
+
+NFV
+
+Network Functions Virtualization网络功能虚拟化
+
+NFVO
+
+Network Functions Virtualization Orchestrator网络功能虚拟化编排器
+
+OLAP
+
+On-Line Analytical Processing联机分析处理
+
+OMM
+
+Operation & Maintenance Module操作维护模块
+
+OS
+
+Operating System操作系统
+
+P2P
+
+Peer-to-Peer端到端
+
+PCC
+
+Policy and Charging Control计费和策略控制
+
+PCIe
+
+Peripheral Component Interconnect Express快速外设组件互连
+
+PCRF
+
+Policy and Charging Rules Function策略和计费规则功能
+
+PDP
+
+Packet Data Protocol分组数据协议
+
+PLMN
+
+Public Land Mobile Network公共陆地移动网
+
+RAT
+
+Radio Access Technology无线接入技术
+
+SAS
+
+Serial Attached SCSI串行小型计算机系统接口
+
+SATA
+
+Serial ATA串行ATA
+
+SSL
+
+Secure Sockets Layer安全套接字层
+
+TECS
+
+Tulip Elastic Cloud System郁金香弹性云系统
+
+VIM
+
+Virtualized Infrastructure Manager虚拟化基础设施管理系统
+
+VIP
+
+Very Important Person贵宾
+
+VNF
+
+Virtualized Network Function虚拟化网络功能
+
+VNFM
+
+Virtualized Network Function Manager虚拟化网络功能管理器
+
+VRF
+
+Virtual Route Forwarding虚拟路由转发
+
+xGW
+
+Extendable Gateway综合接入网关
+
+ZTE
+
+Zhongxing Telecommunications Equipment中兴通讯
