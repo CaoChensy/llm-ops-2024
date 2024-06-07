@@ -21,7 +21,7 @@ retrieve = Search(chunked, embeds, model)
 knowledge = KnowledgeAgent(
     llm=llm, verbose=True, search=retrieve, recall_nums=5)
 
-task_completion = knowledge("director的文档指南是什么？")
+# task_completion = knowledge("director的文档指南是什么？")
 
 questions = []
 with open("demo/question.jsonl", 'r', encoding='utf-8') as f:
