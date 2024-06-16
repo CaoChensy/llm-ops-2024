@@ -14,19 +14,20 @@ mv demo/dataset/rcp.zedx demo/dataset/rcp.zip
 mv demo/dataset/umac.zedx demo/dataset/umac.zip
 mkdir demo/dataset/multi
 
-unzip demo/dataset/director.zip -d demo/dataset/multi
-unzip demo/dataset/emsplus.zip -d demo/dataset/multi
-unzip demo/dataset/rcp.zip -d demo/dataset/multi
-unzip demo/dataset/umac.zip -d demo/dataset/multi
+unzip demo/dataset/director.zip -d demo/dataset/multi/director
+unzip demo/dataset/emsplus.zip -d demo/dataset/multi/emsplus
+unzip demo/dataset/rcp.zip -d demo/dataset/multi/rcp
+unzip demo/dataset/umac.zip -d demo/dataset/multi/umac
 
 pip3 install -r demo/requirements.txt
 echo "数据处理：zedx转zip..."
-python3 demo/zedx2txt.py
+python demo/zedx2txt.py
 echo "数据处理：解析节点..."
-python3 demo/Node.py
+python demo/Node.py
 echo "数据处理：文本切分..."
-python3 demo/Chunk.py
+python demo/Chunk.py
 echo "数据处理：向量化..."
-python3 demo/Embedding
+python demo/Embedding
 echo "RAG..."
-python3 demo/RAG.py
+python demo/RAG.py
+echo "结束"
